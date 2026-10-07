@@ -73,3 +73,5 @@ npm-debug.log*
 *.bak
 *.swp
 *~
+# Environment Variables/ .env files
+.env
