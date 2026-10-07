@@ -1,1 +1,75 @@
+# ===========================
+# Maven Build Output
+# ===========================
 /target/
+*.war
+*.jar
+*.class
+
+# ===========================
+# Eclipse IDE
+# ===========================
+.classpath
+.project
+.settings/
+.metadata/
+
+# ===========================
+# Maven Wrapper (keep .mvn/wrapper if used)
+# ===========================
+# Uncomment if you don't want to commit the maven wrapper:
+# .mvn/
+
+# ===========================
+# Spring / Hibernate Configs with Secrets
+# ===========================
+# If you store DB credentials in properties files, ignore them:
+# src/main/resources/application.properties
+# src/main/resources/hibernate.cfg.xml
+
+# ===========================
+# Logs
+# ===========================
+*.log
+logs/
+
+# ===========================
+# OS-generated files
+# ===========================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ===========================
+# IntelliJ IDEA (if ever used)
+# ===========================
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# ===========================
+# VS Code (if ever used)
+# ===========================
+.vscode/
+
+# ===========================
+# Docker (keep Dockerfile & compose committed)
+# ===========================
+# Uncomment if you don't want to commit Docker files:
+# Dockerfile
+# docker-compose.yml
+
+# ===========================
+# Node / npm (not used here, but good practice)
+# ===========================
+node_modules/
+npm-debug.log*
+
+# ===========================
+# Temporary / Backup files
+# ===========================
+*.tmp
+*.bak
+*.swp
+*~

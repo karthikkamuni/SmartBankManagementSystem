@@ -7,6 +7,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.NativeQuery;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 import com.model.Account;
@@ -22,6 +24,9 @@ public class AdminService {
 	
 	@Autowired
 	private SessionFactory sessionFactory;
+	
+	@Autowired
+	private JavaMailSender mailSender;
 	
 	public Session getSession() {
 		Session session = sessionFactory.getCurrentSession();
@@ -70,12 +75,21 @@ public class AdminService {
 	public void updateAccStatus(String id, String status) {
 		Session session = getSession();
 		Account account = session.find(Account.class,id);
+		String email = account.getCustomer().getEmail();
 		String accountStatus = account.getAccountStatus();
 		System.out.println(accountStatus);
 		if(status == null || status.isEmpty() || status.isBlank()) {
 			return;
 		}
 		account.setAccountStatus(status);
+		
+		SimpleMailMessage mail = new SimpleMailMessage();
+		mail.setFrom("kamunikarthikkumar@gmail.com");
+		mail.setTo(email);
+		mail.setSubject("Account Status Update");
+		mail.setText("Your account has been  : "+status);
+		
+		mailSender.send(mail);
 	}
 	public void addAmount(String id, double balance) {
 		Session session = getSession();

@@ -21,6 +21,9 @@ public class ORMConfig {
 	public DataSource getDatasource() {
 		DriverManagerDataSource dmds = new DriverManagerDataSource();
 		dmds.setDriverClassName("com.mysql.cj.jdbc.Driver");
+//		dmds.setUrl("jdbc:mysql://mysql:3306/smartbankdb");
+//		dmds.setUsername("appuser");
+//		dmds.setPassword("apppass");
 		dmds.setUrl("jdbc:mysql://localhost:3306/smart_bank_management_system");
 		dmds.setUsername("root");
 		dmds.setPassword("root");

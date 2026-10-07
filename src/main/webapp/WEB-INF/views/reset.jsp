@@ -5,91 +5,37 @@
 <head>
 <meta charset="UTF-8">
 <title>Reset</title>
-
-<style>
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f4f8;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    color: #333;
-}
-
-/* Container */
-.container {
-    max-width: 500px;
-    margin: 60px auto 20px auto;
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-/* Form elements */
-input[type="password"], input[type="submit"] {
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    box-sizing: border-box;
-}
-
-input[type="submit"] {
-    background-color: #004080;
-    color: white;
-    cursor: pointer;
-    border: none;
-    transition: 0.3s ease;
-}
-
-input[type="submit"]:hover {
-    background-color: #003366;
-}
-
-/* Headers */
-h1, h2 {
-    color: #004080;
-}
-
-/* Footer */
-footer {
-    background-color: #004080;
-    color: white;
-    text-align: center;
-    padding: 15px 0;
-    font-size: 14px;
-    margin-top: auto;
-}
-</style>
-
 </head>
 <body>
 
-<div class="container">
-    <h1>Welcome ${name}</h1>
-    <h2>This is your AccountNumber: ${accountNumber}</h2>
-    <h2>Your Password: ${password}</h2>
-    <h2>Please Reset your Password</h2>
+<h1 align="center">Welcome ${name}</h1>
+<h2 align="center">This is your AccountNumber: ${accountNumber}</h2>
+<h2 align="center">Your Password: ${password}</h2>
+<h2 align="center">Please Reset your Password</h2>
 
-    <form action="reset" method="post">
-        <input type="password" name="currentPassword" placeholder="Enter Current Password" required><br>
-        <input type="password" name="newPassword" placeholder="Enter New Password" required><br>
-        <input type="password" name="confirmPassword" placeholder="Confirm Password" required><br>
-        <input type="submit" value="Reset">
-    </form>
+<form action="reset" method="post">
+    <table align="center" border="1" cellpadding="8" cellspacing="0">
+        <tr>
+            <td><label for="currentPassword">Current Password :</label></td>
+            <td><input type="password" id="currentPassword" name="currentPassword" placeholder="Enter Current Password" required></td>
+        </tr>
+        <tr>
+            <td><label for="newPassword">New Password :</label></td>
+            <td><input type="password" id="newPassword" name="newPassword" placeholder="Enter New Password" required></td>
+        </tr>
+        <tr>
+            <td><label for="confirmPassword">Confirm Password :</label></td>
+            <td><input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><input type="submit" value="Reset"></td>
+        </tr>
+    </table>
+</form>
 
-    <h1>${msg}</h1>
-</div>
+<h1 align="center">${msg}</h1>
 
-<footer>
-    &copy; 2025 Smart Bank. All rights reserved.
-</footer>
+<p align="center">&copy; 2025 Smart Bank. All rights reserved.</p>
 
 </body>
 </html>

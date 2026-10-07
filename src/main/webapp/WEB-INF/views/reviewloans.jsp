@@ -5,93 +5,22 @@
 <head>
 <meta charset="UTF-8">
 <title>Review Loans</title>
-
-<style>
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f4f8;
-    margin: 0;
-    padding: 0;
-    color: #333;
-}
-
-/* Headers */
-h1, h3 {
-    color: #004080;
-    margin: 20px;
-}
-
-/* Table styling */
-table {
-    width: 90%;
-    margin: 20px auto;
-    border-collapse: collapse;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    background-color: #fff;
-}
-
-th, td {
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    text-align: center;
-}
-
-th {
-    background-color: #004080;
-    color: white;
-    font-weight: bold;
-}
-
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-/* Select and Button inside table */
-select, button {
-    padding: 5px 8px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 14px;
-}
-
-button {
-    background-color: #004080;
-    color: white;
-    cursor: pointer;
-    border: none;
-    transition: 0.3s ease;
-}
-
-button:hover {
-    background-color: #003366;
-}
-
-/* Links */
-a {
-    text-decoration: none;
-    color: #004080;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-</style>
-
 </head>
 <body>
 
 <h1 align="center">Review Loans</h1>
+
 <h3 align="right">
     <a href="${pageContext.request.contextPath}/admin/backtohomepage">Homepage</a>
 </h3>
 
-<table>
+<table align="center" border="1" cellpadding="8" cellspacing="0">
     <tr>
         <th>LoanId</th>
         <th>Account Number</th>
         <th>Loan Amount</th>
         <th>Loan Type</th>
-        <th>Applied Date & Time</th>
+        <th>Applied Date &amp; Time</th>
         <th>Loan Status</th>
         <th>Update Status</th>
     </tr>
@@ -100,13 +29,13 @@ a:hover {
         for (Loan loan : loans) {
     %>
     <tr>
-        <td><%=loan.getLoanId()%></td>
-        <td><%=loan.getAccountNumber()%></td>
-        <td><%=loan.getLoanAmount()%></td>
-        <td><%=loan.getLoanType()%></td>
-        <td><%=loan.getAppliedDateAndTime()%></td>
-        <td><%=loan.getStatus()%></td>
-        <td>
+        <td align="center"><%=loan.getLoanId()%></td>
+        <td align="center"><%=loan.getAccountNumber()%></td>
+        <td align="center"><%=loan.getLoanAmount()%></td>
+        <td align="center"><%=loan.getLoanType()%></td>
+        <td align="center"><%=loan.getAppliedDateAndTime()%></td>
+        <td align="center"><%=loan.getStatus()%></td>
+        <td align="center">
             <form action="${pageContext.request.contextPath}/admin/updatestatus" method="get">
                 <select name="status">
                     <option value="">-- Update Status --</option>
@@ -124,4 +53,3 @@ a:hover {
 
 </body>
 </html>
-

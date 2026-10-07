@@ -82,6 +82,7 @@ public class CustomerController {
 		System.out.println(accNum+" "+password);
 		Customer customer = customerService.getCustomerByAccount(accNum);
 		System.out.println(customer);
+
 		if (customer == null) {
 		    model.addAttribute("msg", "No user exists. Please enter correct account number");
 		    return "login";
